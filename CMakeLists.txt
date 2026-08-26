@@ -9,7 +9,7 @@ set(SFML_STATIC_LIBRARIES ON)
 
 find_package(SFML 3.1 COMPONENTS Graphics REQUIRED)
 
-add_executable(NBody #WIN32
+add_executable(NBody WIN32
     src/main.cpp
     src/Star.cpp
     src/Cluster.cpp
