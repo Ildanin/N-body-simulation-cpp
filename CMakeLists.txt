@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(SFML_STATIC_LIBRARIES ON)
-#set(SFML_DIR "C:/Users/1/Desktop/Ilya/Programming/Cpp/SFML-3.1.0-gcc16/lib/cmake/SFML")
 
 find_package(SFML 3.1 COMPONENTS Graphics REQUIRED)
 
