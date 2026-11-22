@@ -1,6 +1,5 @@
 #include "Star.hpp"
 
-#include <cmath>
 #include "Parameters.hpp"
 #include "Coords.hpp"
 

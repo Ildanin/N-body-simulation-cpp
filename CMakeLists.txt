@@ -1,30 +1,37 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.20)
 
-project(NBody LANGUAGES CXX)
+project(NBodyProblem
+    VERSION 1.0
+    LANGUAGES CXX
+)
 
-set(CMAKE_CXX_STANDARD 17)
+# C++ standard
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(SFML_STATIC_LIBRARIES ON)
+# Find SFML
+find_package(SFML 3 REQUIRED COMPONENTS Graphics Window System)
 
-find_package(SFML 3.1 COMPONENTS Graphics REQUIRED)
-
-add_executable(NBody WIN32
-    src/main.cpp
-    src/Star.cpp
+# Source files
+set(SOURCES
     src/Cluster.cpp
     src/Coords.cpp
+    src/Example.cpp
+    src/main.cpp
+    src/Star.cpp
     src/Utiles.cpp
-    src/Example.cpp)
-
-add_custom_command(TARGET NBody POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory
-    ${CMAKE_SOURCE_DIR}/assets
-    $<TARGET_FILE_DIR:NBody>/assets
 )
 
-target_include_directories(NBody PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
-)
+# Create executable
+add_executable(NBodyProblem ${SOURCES})
 
-target_link_libraries(NBody PRIVATE SFML::Graphics)
+# Include directories
+target_include_directories(NBodyProblem PRIVATE include)
+
+# Link libraries
+target_link_libraries(NBodyProblem PRIVATE
+    SFML::Graphics
+    SFML::Window
+    SFML::System
+)
