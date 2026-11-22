@@ -1,7 +1,7 @@
 #pragma once
 
 namespace Param {
-    constexpr double GRAVITY = 1000;
+    constexpr double GRAVITY = 10000;
 
     constexpr int WIDTH = 800;
     constexpr int HEIGHT = 800;
@@ -15,7 +15,7 @@ namespace Param {
     inline float YSCALE = HEIGHT / (YMAX - YMIN);
 
     constexpr double CAMERASPEED = 0.5;
-    constexpr double ZOOM = 50;
+    constexpr double ZOOM = 5;
 
     constexpr double PI = 3.14159265358979323846;
 }

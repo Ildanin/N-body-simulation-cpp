@@ -1,6 +1,3 @@
-#include "Coords.hpp"
-
-#include <SFML/Graphics.hpp>
 #include "Parameters.hpp"
 
 using namespace Param;
@@ -51,7 +48,7 @@ void zoomOut(float dt) {
 void zoomIn(float dt) {
     float xchange = (XMAX - XMIN) * ZOOM * dt;
     float ychange = (YMAX - YMIN) * ZOOM * dt;
-    if (YMAX - YMIN < 2*ychange and XMAX - XMIN < 2*xchange) {
+    if ((YMAX - YMIN < 2*ychange) and (XMAX - XMIN < 2*xchange)) {
         return ;
     }
     XMIN += xchange;
